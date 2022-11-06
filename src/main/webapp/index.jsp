@@ -6,9 +6,10 @@
 	 	<jsp:include page="./header.jsp" />
 		<!-- Custom styles per le features di bootstrap 'Columns with icons' -->
 	   <link href="./assets/css/features.css" rel="stylesheet">
-	   <link href="./assets/css/custom.css" rel="stylesheet">
+	   <link href="assets/css/custom.css" rel="stylesheet" >
 	   
-	   <title>Gestione Biglietti Web</title>
+	   
+	   <title>Gestione Biglietti</title>
 	 </head>
 	   <body class="d-flex flex-column h-100">
 	   		
@@ -31,6 +32,10 @@
 			  <symbol id="chevron-right" viewBox="0 0 16 16">
 			    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
 			  </symbol>
+			  <symbol id="bi-ticket" viewBox="0 0 16 16">
+			    <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6V4.5ZM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5h-13Z"/>
+			  </symbol>
+			  
 			</svg>
 			<!-- ############## end ###################  -->
 	   
@@ -51,9 +56,10 @@
 			    
 			     <div class="p-5 mb-4 bg-light rounded-3">
 				      <div class="container-fluid py-5">
-				        <h1 class="display-5 fw-bold">GESTIONE BIGLIETTI WEB</h1>
-				        <p class="col-md-8 fs-4">Questa applicazione web permette di gestire i tuoi biglietti. Non perderai più un volo, una nave o uno bus. </p>
-				        <a class="btn btn-primary btn-lg" href="ListArticoliServlet">Mostra Biglietti</a>
+				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietti</h1>
+				        <p class="col-md-8 fs-4">Tramite questo sito puoi creare/modificare o eliminare i tuoi biglietti</p>
+				        <a class="btn btn-info btn-lg" href="ListBigliettiServlet">Elenca Biglietti</a>
+				        <a class="btn btn-info btn-lg" href="PrepareSearchBigliettoServlet">Ricerca Biglietto</a>
 				      </div>
 			    </div>
 			    
@@ -63,34 +69,34 @@
 			  <div class="container px-4 py-5" id="featured-3">
 			    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
+			        <div class="feature-icon bg-info bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
 			        </div>
-			        <h2>Lista Biglietti</h2>
-			        <p>Potrai vedere tutti i tuoi biglietti e decidere cosa farne.</p>
-			        <a href="ListArticoliServlet" class="icon-link">
+			        <h2>Elenca Biglietti</h2>
+			        <p>Tramite questa funzionalità puoi avere una lista di tutti i biglietti presenti nel database ed accedere ad ogni singolo biglietto per poi poterlo modificare o eliminare </p>
+			        <a href="ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
-			          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+			        <div class="feature-icon bg-info bg-gradient">
+			          <svg class="bi" width="1em" height="1em"><use xlink:href="#bi-ticket"/></svg>
 			        </div>
-			        <h2>Inserisci Nuovo Biglietto</h2>
-			        <p>Inserisci un nuovo biglietto per tenerne traccia in futuro.</p>
-			        <a href="PrepareInsertArticoloServlet" class="icon-link">
+			        <h2>Inserisci Biglietto</h2>
+			        <p>Tramite questa funzionalità puoi creare un nuovo biglietto, assegnandogli i seguenti campi: provenienza, destinazione, prezzo e data</p>
+			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
+			        <div class="feature-icon bg-info bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
 			        </div>
-			        <h2>Trova Biglietto</h2>
-			        <p>Trova i tuoi biglietti secondo la provenienza, la destinazione, il giorno della partenza o il prezzo.</p>
-			        <a href="PrepareFindByExampleArticoloServlet" class="icon-link">
+			        <h2>Altra Funzione</h2>
+			        <p>Coming soon.....</p>
+			        <a href="#" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>

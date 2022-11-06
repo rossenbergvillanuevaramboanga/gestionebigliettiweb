@@ -17,28 +17,38 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table(name = "biglietto")
 public class Biglietto {
 
-	// Biglietto (id, provenienza, destinazione, data, prezzo)
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long id;
 	@Column(name = "provenienza")
 	private String provenienza;
-	@Column(name = "destinazione")
+	@Column( name = "destinazione")
 	private String destinazione;
 	@Column(name = "data")
 	private Date data;
 	@Column(name = "prezzo")
 	private Integer prezzo;
-
+	
 	// campi per le time info del record
 	@CreationTimestamp
+	@Column(updatable = false)
 	private LocalDateTime createDateTime;
 	@UpdateTimestamp
 	private LocalDateTime updateDateTime;
-
+	
 	public Biglietto() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Biglietto(Long id, String provenienza, String destinazione, Date data, Integer prezzo) {
+		super();
+		this.id = id;
+		this.provenienza = provenienza;
+		this.destinazione = destinazione;
+		this.data = data;
+		this.prezzo = prezzo;
 	}
 
 	public Biglietto(String provenienza, String destinazione, Date data, Integer prezzo) {
@@ -47,6 +57,12 @@ public class Biglietto {
 		this.destinazione = destinazione;
 		this.data = data;
 		this.prezzo = prezzo;
+	}
+
+	public Biglietto(String provenienza, String destinazione) {
+		super();
+		this.provenienza = provenienza;
+		this.destinazione = destinazione;
 	}
 
 	public Long getId() {
@@ -106,5 +122,4 @@ public class Biglietto {
 	}
 	
 	
-
 }

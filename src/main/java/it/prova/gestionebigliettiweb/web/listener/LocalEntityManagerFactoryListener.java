@@ -1,4 +1,3 @@
-
 package it.prova.gestionebigliettiweb.web.listener;
 
 import javax.persistence.EntityManager;
@@ -7,11 +6,13 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 
+@WebListener
 public class LocalEntityManagerFactoryListener implements ServletContextListener {
-	
-	private static EntityManagerFactory entityManagerFactory;
 
+	private static EntityManagerFactory entityManagerFactory;
+	
 	public void contextInitialized(ServletContextEvent sce) {
 		try {
 			entityManagerFactory = Persistence.createEntityManagerFactory("gestionebigliettiweb_unit");
@@ -47,7 +48,5 @@ public class LocalEntityManagerFactoryListener implements ServletContextListener
 				System.err.println("Unexpected exception on closing JPA EntityManager" + ex);
 			}
 		}
-	}
-	
-
+	}	
 }

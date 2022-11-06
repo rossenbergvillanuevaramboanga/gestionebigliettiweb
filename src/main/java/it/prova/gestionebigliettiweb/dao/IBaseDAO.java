@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 public interface IBaseDAO<T> {
-
+	
 	public List<T> list() throws Exception;
 
 	public T findOne(Long id) throws Exception;
