@@ -56,8 +56,8 @@
 			    
 			     <div class="p-5 mb-4 bg-light rounded-3">
 				      <div class="container-fluid py-5">
-				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietti</h1>
-				        <p class="col-md-8 fs-4">Tramite questo sito puoi creare/modificare o eliminare i tuoi biglietti</p>
+				        <h1 class="display-5 fw-bold">WEB APP GESTIONE BIGLIETTI</h1>
+				        <p class="col-md-8 fs-4">Con questa Web app puoi gestire i tuoi biglietti.</p>
 				        <a class="btn btn-info btn-lg" href="ListBigliettiServlet">Elenca Biglietti</a>
 				        <a class="btn btn-info btn-lg" href="PrepareSearchBigliettoServlet">Ricerca Biglietto</a>
 				      </div>
@@ -73,7 +73,7 @@
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
 			        </div>
 			        <h2>Elenca Biglietti</h2>
-			        <p>Tramite questa funzionalità puoi avere una lista di tutti i biglietti presenti nel database ed accedere ad ogni singolo biglietto per poi poterlo modificare o eliminare </p>
+			        <p>Trova la lista di tutti i biglietti </p>
 			        <a href="ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
@@ -84,7 +84,7 @@
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#bi-ticket"/></svg>
 			        </div>
 			        <h2>Inserisci Biglietto</h2>
-			        <p>Tramite questa funzionalità puoi creare un nuovo biglietto, assegnandogli i seguenti campi: provenienza, destinazione, prezzo e data</p>
+			        <p>Crea un nuovo biglietto</p>
 			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
@@ -94,9 +94,9 @@
 			        <div class="feature-icon bg-info bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
 			        </div>
-			        <h2>Altra Funzione</h2>
-			        <p>Coming soon.....</p>
-			        <a href="#" class="icon-link">
+			        <h2>Ricerca Biglietto</h2>
+			        <p>Trova il tuo biglietto</p>
+			        <a href="PrepareSearchBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
