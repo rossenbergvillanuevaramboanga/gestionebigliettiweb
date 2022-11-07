@@ -88,9 +88,9 @@
 				                        <td>${biglietto.prezzo}</td>
 				                        <td><fmt:formatDate value="${biglietto.data!=null?biglietto.data:'N.D'}" pattern="yyyy-mm-dd" /></td>
 				                        <td>
-											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowBigliettoServlet?idBiglietto=${biglietto.id}">Visualizza</a>
-											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoServlet?idBigliettoUpdate=${biglietto.id}">Edit</a>
-											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoServlet?idBigliettoDaEliminare=${biglietto.id}">Delete</a>
+											<a class="btn  btn-sm btn-outline-secondary" href="${pageContext.request.contextPath }/ExecuteShowBigliettoServlet?idBiglietto=${biglietto.id}">Visualizza</a>
+											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath }/admin/PrepareUpdateBigliettoServlet?idBigliettoUpdate=${biglietto.id}">Edit</a>
+											<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath }/admin/PrepareDeleteBigliettoServlet?idBigliettoDaEliminare=${biglietto.id}">Delete</a>
 										</td>
 				                    </tr>
 				     

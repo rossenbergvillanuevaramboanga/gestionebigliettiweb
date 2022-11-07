@@ -1,3 +1,4 @@
+<%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <header>
   <!-- Fixed navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Eighth navbar example">
@@ -9,13 +10,13 @@
       <div class="collapse navbar-collapse" id="navbarsExample07">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+            <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath }/index.jsp">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PrepareInsertBigliettoServlet">Inserisci</a>
+            <a class="nav-link" href="${pageContext.request.contextPath }/admin/PrepareInsertBigliettoServlet">Inserisci</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PrepareSearchBigliettoServlet">Ricerca</a>
+            <a class="nav-link" href="${pageContext.request.contextPath }/PrepareSearchBigliettoServlet">Ricerca</a>
           </li>
           <!--  <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -31,7 +32,13 @@
         </ul>
       </div>
       <div class="col-md-3 text-end" >
-        <a  class="btn bg-white" href="index.jsp" style="color: #000000;">Login</a>
+      <c:if test="${userInfo == null }">
+        <a  class="btn bg-white" href="<%= request.getContextPath()%>/LoginServlet" style="color: #000000;">Login</a>
+      </c:if>
+      <c:if test="${userInfo != null }">
+     	<p class="navbar-text"> Benvenuto ${userInfo.username}! 
+        <a  class="btn bg-white" href="<%= request.getContextPath()%>/LogoutServlet" style="color: #000000;">Logout</a>
+      </c:if>
       </div>
     </div>
   </nav>

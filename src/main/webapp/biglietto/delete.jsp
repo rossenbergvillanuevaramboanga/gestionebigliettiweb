@@ -56,7 +56,7 @@
 					           <!-- <i class='fa fa-chevron-right'>Conferma</i> -->
 								<input type="hidden" name="idBigliettoDaEliminare" value="${visualizzaBigliettoEliminareAttr.id}">
 					       <!-- </a>-->
-					        <a href="ListBigliettiServlet" class='btn btn-outline-secondary' style='width:80px'>
+					        <a href="${pageContext.request.contextPath }/ListBigliettiServlet" class='btn btn-outline-secondary' style='width:80px'>
 					            <i class='fa fa-chevron-left'></i> Back
 					        </a>
 					    </form>

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.btn{
+	background-color: #0B5345 ;
+	border-color: #ffffff  ;
+	color: #ffffff;
+	
+}
+
+.btn:hover {
+  background-color: #ffffff;
+  border-color: #ffffff
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+}
+
+.bg-primary{
+	background-color: #0B5345 !important;
+}
+
+.bg-light{
+	background-color: #E9F7EF !important;
+}
+
+.bg-info{
+	background-color: #0B5345 !important;
+}
+
+.navbar{
+	background-color: #0B5345;
+}
+
+.footer{
+	background-color: #0B5345;
+}
+
+.nav-link{
+	color: #ffffff !important;
+}
+
+.icon-link{
+	color: #0B5345 !important;
+}

@@ -58,8 +58,8 @@
 				      <div class="container-fluid py-5">
 				        <h1 class="display-5 fw-bold">WEB APP GESTIONE BIGLIETTI</h1>
 				        <p class="col-md-8 fs-4">Con questa Web app puoi gestire i tuoi biglietti.</p>
-				        <a class="btn btn-info btn-lg" href="ListBigliettiServlet">Elenca Biglietti</a>
-				        <a class="btn btn-info btn-lg" href="PrepareSearchBigliettoServlet">Ricerca Biglietto</a>
+				        <a class="btn btn-info btn-lg" href="${pageContext.request.contextPath }/ListBigliettiServlet">Elenca Biglietti</a>
+				        <a class="btn btn-info btn-lg" href="${pageContext.request.contextPath }/PrepareSearchBigliettoServlet">Ricerca Biglietto</a>
 				      </div>
 			    </div>
 			    
@@ -74,7 +74,7 @@
 			        </div>
 			        <h2>Elenca Biglietti</h2>
 			        <p>Trova la lista di tutti i biglietti </p>
-			        <a href="ListBigliettiServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
@@ -85,7 +85,7 @@
 			        </div>
 			        <h2>Inserisci Biglietto</h2>
 			        <p>Crea un nuovo biglietto</p>
-			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/admin/PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
@@ -96,7 +96,7 @@
 			        </div>
 			        <h2>Ricerca Biglietto</h2>
 			        <p>Trova il tuo biglietto</p>
-			        <a href="PrepareSearchBigliettoServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/PrepareSearchBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
