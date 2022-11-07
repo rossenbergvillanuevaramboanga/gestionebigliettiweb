@@ -1,6 +1,8 @@
 <!doctype html>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
+<%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="it" class="h-100" >
 	 <head>
 	 
@@ -43,32 +45,34 @@
 		
 							<form method="post" action="ExecuteUpdateBigliettoServlet" class="row g-3" novalidate="novalidate">
 							
-								<% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("bigliettoDaInviareAdUpdate"); %>
+								<%-- <% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("bigliettoDaInviareAdUpdate"); %> --%>
+								<!--<c:set var = "bigliettoInPagina" value = "${bigliettoDaInviareAdUpdate}"/> -->
 							
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">Provenienza <span class="text-danger">*</span></label>
 									<input type="text" name="provenienza" id="provenienza" class="form-control" placeholder="Inserire la provenienza"  
-										value="<%=bigliettoInPagina.getProvenienza() %>" required>
+										value="${bigliettoDaInviareAdUpdate.provenienza!=null?bigliettoDaInviareAdUpdate.provenienza:''}" required>
 								</div>
 								
 								<div class="col-md-6">
 									<label for="destinazione" class="form-label">Destinazione <span class="text-danger">*</span></label>
 									<input type="text" name="destinazione" id="destinazione" class="form-control" placeholder="Inserire la destinazione"  
-										value="<%=bigliettoInPagina.getDestinazione()!=null?bigliettoInPagina.getDestinazione():"" %>" required>
+										value="${bigliettoDaInviareAdUpdate.destinazione!=null?bigliettoDaInviareAdUpdate.destinazione:''}" required>
 								</div>
 							
 								<div class="col-md-6">
 									<label for="prezzo" class="form-label">Prezzo <span class="text-danger">*</span></label>
 									<input type="number" class="form-control" name="prezzo" id="prezzo" placeholder="Inserire prezzo" 
-									value="<%=bigliettoInPagina.getPrezzo()!=null?bigliettoInPagina.getPrezzo():"" %>" required>
+									value="${bigliettoDaInviareAdUpdate.prezzo!=null?bigliettoDaInviareAdUpdate.prezzo:''}" required>
 								</div>
 								
+								<fmt:formatDate pattern="yyyy-MM-dd" value="${bigliettoDaInviareAdUpdate.data}" var="dataParsed"/> 
 								<div class="col-md-3">
 									<label for="data" class="form-label">Data<span class="text-danger">*</span></label>
 									<input class="form-control"  name="data" id="data" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value="<%=bigliettoInPagina.getData()!=null? new SimpleDateFormat("yyyy-MM-dd").format(bigliettoInPagina.getData()):""  %>" required/>
+										value="${dataParsed}" required/>
 								</div>
-								<input type="hidden" name="idBiglietto" id="idBiglietto" value="<%=bigliettoInPagina.getId() %>">
+								<input type="hidden" name="idBiglietto" id="idBiglietto" value="${bigliettoDaInviareAdUpdate.id}">
 								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-info">Conferma Modifica</button>

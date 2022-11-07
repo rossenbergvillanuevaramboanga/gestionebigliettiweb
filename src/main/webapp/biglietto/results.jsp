@@ -2,6 +2,8 @@
 <%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
 <%@page import="java.util.List"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html lang="it" class="h-100" >
 	 <head>
@@ -57,8 +59,10 @@
 				                    </tr>
 				                </thead>
 				                <tbody>
+				                <%-- 
 				                	<% List<Biglietto> listaBiglietti = (List<Biglietto>)request.getAttribute("listaBigliettiAttr");
 				                		for(Biglietto item:listaBiglietti){ %>
+				                	
 				                    <tr >
 				                        <td><%=item.getId() %></td>
 				                        <td><%=item.getProvenienza() %></td>
@@ -72,6 +76,25 @@
 										</td>
 				                    </tr>
 				                    <% } %>
+				                    
+				                     --%>
+				                    
+				                    <c:forEach items="${listaBigliettiAttr}" var="biglietto">
+				                    
+				                    <tr >
+				                        <td>${biglietto.id}</td>
+				                        <td>${biglietto.provenienza}</td>
+				                        <td>${biglietto.destinazione}</td>
+				                        <td>${biglietto.prezzo}</td>
+				                        <td><fmt:formatDate value="${biglietto.data!=null?biglietto.data:'N.D'}" pattern="yyyy-mm-dd" /></td>
+				                        <td>
+											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowBigliettoServlet?idBiglietto=${biglietto.id}">Visualizza</a>
+											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoServlet?idBigliettoUpdate=${biglietto.id}">Edit</a>
+											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoServlet?idBigliettoDaEliminare=${biglietto.id}">Delete</a>
+										</td>
+				                    </tr>
+				     
+				                    </c:forEach>
 				                    
 				                </tbody>
 				            </table>

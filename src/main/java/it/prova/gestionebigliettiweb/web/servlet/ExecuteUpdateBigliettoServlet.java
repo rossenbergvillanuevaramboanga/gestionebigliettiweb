@@ -47,6 +47,14 @@ public class ExecuteUpdateBigliettoServlet extends HttpServlet {
 			request.getRequestDispatcher("/biglietto/update.jsp").forward(request, response);
 			return;
 		}
+		
+//		if (!UtilityBigliettoForm.validateBigliettoBean(bigliettoInstance)) {
+//				request.setAttribute("bigliettoDaInviareAdUpdate",bigliettoInstance);
+//				request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
+//				request.getRequestDispatcher("/biglietto/update.jsp").forward(request, response);
+//				return;
+//		}
+		
 
 		// se sono qui i valori sono ok quindi posso creare l'oggetto da inserire
 		// occupiamoci delle operazioni di business
